@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio & Progetto - Delivery</title>
+    <link rel="stylesheet" href="delivery.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="IMG_Extra/logosinfondo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="delivery.js" defer></script>
+</head>
+
+<body>
+    <!-- Pre-carga -->
+    <div class="pre-carga" transition-style="in:custom:circle-swoop">
+        <div class="pre-carga-contenido">
+            <img src="IMG_Extra/logosinfondo.png" alt="Logo" class="logo" align="center">
+            <div class="loader"></div>
+            <p class="nombre-pagina">Studio & Progetto</p>
+        </div>
+    </div>
+    <script>
+        function mostrarContenido() {
+            document.querySelector('.pre-carga').classList.add('desaparecer');
+            setTimeout(() => {
+                document.querySelector('.pre-carga').style.display = 'none';
+            }, 500);
+        }
+
+        setTimeout(mostrarContenido, 2000);
+        window.addEventListener('load', mostrarContenido);
+    </script>
+
+
+    <!-- Barra de navegación -->
+   <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="IMG_Extra/logosinfondo.png" alt="Studio & Progetto Logo">
+        <span>Studio & Progetto</span>
+      </a>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html" class="active" data-icon="fas fa-home">Inicio</a></li>
+          <li><a href="productos.html" data-icon="fas fa-box">Productos</a></li>
+          <li><a href="copias-impresion.html" data-icon="fas fa-print">Copias e Impresiones</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <a href="carrito.html" class="nav-icon" aria-label="Carrito"><i class="fas fa-shopping-cart"></i></a>
+        <a href="iniciar-sesion.html" class="nav-icon" aria-label="Iniciar sesión"><i class="fas fa-user"></i></a>
+        <button class="dark-mode-toggle" aria-label="Alternar modo oscuro"><i class="fas fa-moon"></i></button>
+      </div>
+      <button class="mobile-menu" aria-label="Menú móvil"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  
+
+
+    <!-- Servicio de delivery -->
+    <section class="delivery-section">
+        <div class="container">
+            <h1>Servicio de Delivery</h1>
+            <p class="delivery-description">Llevamos tus productos hasta la puerta de tu casa, oficina o institución educativa. Rápido, seguro y confiable.</p>
+            
+            <div class="delivery-info">
+                <div class="info-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Zonas de cobertura</h3>
+                    <p>Servicio disponible en todo Trujillo y distritos aledaños.</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Horarios</h3>
+                    <p>Lunes a Sábado de 9am a 8pm.</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Costos</h3>
+                    <p>Varían según la zona y el monto de compra.</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>¿Cómo funciona?</h2>
+                <ol>
+                    <li><i class="fas fa-shopping-cart"></i> Elige tus productos y agrégales al carrito.</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Proporciona tu ubicación para calcular el costo de envío.</li>
+                    <li><i class="fas fa-credit-card"></i> Realiza el pago de forma segura.</li>
+                    <li><i class="fas fa-truck"></i> Recibe tu pedido en la puerta de tu casa.</li>
+                </ol>
+            </div>
+
+            <!-- Ubicación -->
+            <section class="location-map-section">
+                <div class="container">
+                    <h2 class="section-title animate__animated animate__fadeIn">¿Dónde nos ubicamos?</h2>
+                    
+                    <div class="map-container">
+                        <div class="map-frame">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.1234567890123!2d-79.01234567890123!3d-8.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3f1234567890%3A0x123456789abcdef!2sCalle%20Las%20Gemas%20626%2C%20Urb.%20Santa%20In%C3%A9s%2C%20Trujillo%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1680000000000!5m2!1ses!2spe" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="google-map">
+                            </iframe>
+                        </div>
+                        
+                        <div class="map-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Calle Las Gemas 626, Urb. Santa Inés, Trujillo-Perú</p>
+                            <p><i class="fas fa-phone"></i> +51 939275406</p>
+                            <p><i class="fas fa-clock"></i> Lunes a Sábado, 8am - 9pm</p>
+                            
+                            <a href="https://maps.google.com" target="_blank" class="btn map-btn">
+                                <i class="fas fa-directions"></i> Cómo llegar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="delivery-area">
+                <h2><i class="fas fa-truck"></i> Zonas de Delivery</h2>
+                <p>Realizamos envíos a todas las zonas de Trujillo:</p>
+                <ul>
+                    <li>Centro de Trujillo</li>
+                    <li>La Esperanza</li>
+                    <li>El Porvenir</li>
+                    <li>Florencia de Mora</li>
+                    <li>Víctor Larco</li>
+                    <li>Huanchaco</li>
+                    <li>Moche</li>
+                    <li>Salaverry</li>
+                    <li>Laredo</li>
+                    <li>Urbanizaciones Residenciales</li>
+                </ul>
+            </div>
+
+            <!-- Formulario de solicitud de delivery -->
+            <div class="delivery-content">
+                <div class="form-and-image">
+                    <div class="delivery-form">
+                        <h2>Solicitar Delivery</h2>
+                        
+                        <div class="form-group">
+                            <label>Nombre completo:</label>
+                            <input type="text" name="nombre" id="nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Teléfono:</label>
+                            <input type="tel" name="telefono" id="telefono" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Dirección exacta:</label>
+                            <textarea rows="3" name="direccion" id="direccion" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Referencia:</label>
+                            <textarea rows="2" name="referencia" id="referencia"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Zona:</label>
+                            <select name="zona" id="zona">
+                                <option>Centro de Trujillo</option>
+                                <option>La Esperanza</option>
+                                <option>El Porvenir</option>
+                                <option>Florencia de Mora</option>
+                                <option>Víctor Larco</option>
+                                <option>Moche</option>
+                                <option>Huanchaco</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Productos a entregar:</label>
+                            <textarea rows="4" name="productos" id="productos" required></textarea>
+                            <small>Puedes copiar los productos de tu <a href="carrito.html">carrito de compras</a></small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Fecha de entrega:</label>
+                            <input type="date" name="fecha" id="fecha" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Hora aproximada:</label>
+                            <input type="time" name="hora" id="hora" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Método de pago:</label>
+                            <select name="metodoPago" id="metodoPago">
+                                <option>Efectivo al recibir</option>
+                                <option>Transferencia bancaria</option>
+                                <option>Yape / Plin</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Instrucciones adicionales:</label>
+                            <textarea rows="3" name="instrucciones" id="instrucciones"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Subir archivo (opcional):</label>
+                            <div class="button">
+                                <i class="fas fa-upload icon"></i>
+                                <input type="file" name="archivo" id="archivo" accept="*/*" multiple>
+                                <span>Seleccionar archivo</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="button" class="button get-location">Obtener información de ubicación</button>
+                            <button type="button" class="button submit-delivery" id="submitBtn">Enviar solicitud</button>
+                        </div>
+                    </div>
+                    <div class="form-image">
+                        <img src="IMG_Extra/señorDelivery.png" alt="Logo Studio & Progetto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón de delivery -->
+    <a id="deliveryFloat" href="delivery.html" class="delivery-float" title="Delivery">
+        <i class="fas fa-motorcycle"></i>
+        <span class="delivery-notification"></span>
+    </a>
+
+    <!-- Contenedor de la moto -->
+    <div class="moto-container" id="motoContainer">
+        <div class="moto">🏍️</div>
+    </div>
+
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/51939275406" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Botón de pantalla completa -->
+    <button class="fullscreen-btn" title="Pantalla completa">
+        <i class="fas fa-expand"></i>
+    </button>
+
+    <div id="footer-trigger"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-phone"></i> +51 939275406</p>
+                <p><i class="fas fa-envelope"></i>studioprogettosac@gmail.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Sobre nosotros</h3>
+                <ul>
+                    <li><a href="politicas-privacidad.html">Políticas de Privacidad</a></li>
+                    <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Sábado</p>
+                <p>8am - 9pm</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="productos.html">Ofertas Especiales</a></li>
+                    <li><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 style="margin-bottom: 8px;">Síguenos</h3>
+                <ul class="wrapper" style="margin-top: 0;">
+                    <li>
+                        <a class="icon facebook" href="https://www.facebook.com/profile.php?id=61576368759571"
+                            target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon instagram"
+                            href="https://www.instagram.com/studioprogettosac/?utm_source=ig_web_button_share_sheet"
+                            target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon tiktok" href="https://www.tiktok.com/@tu_usuario" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Studio & Progetto. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts combinados -->
+    <script>
+        // Animación de la moto y redirección
+        const deliveryLink = document.getElementById('deliveryFloat');
+        const motoContainer = document.getElementById('motoContainer');
+
+        deliveryLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            motoContainer.classList.remove('active');
+            void motoContainer.offsetWidth;
+            motoContainer.classList.add('active');
+            setTimeout(() => {
+                window.location.href = deliveryLink.getAttribute('href');
+            }, 10000);
+        });
+
+        // Pantalla completa
+        document.addEventListener('DOMContentLoaded', function() {
+            const fullscreenBtn = document.querySelector('.fullscreen-btn');
+            const icon = fullscreenBtn.querySelector('i');
+            
+            if (!document.fullscreenEnabled && !document.webkitFullscreenEnabled && 
+                !document.mozFullScreenEnabled && !document.msFullscreenEnabled) {
+                fullscreenBtn.style.display = 'none';
+                return;
+            }
+            
+            fullscreenBtn.addEventListener('click', toggleFullscreen);
+            
+            function toggleFullscreen() {
+                if (!document.fullscreenElement && !document.webkitFullscreenElement && 
+                    !document.mozFullScreenElement && !document.msFullscreenElement) {
+                    const element = document.documentElement;
+                    if (element.requestFullscreen) {
+                        element.requestFullscreen();
+                    } else if (element.webkitRequestFullscreen) {
+                        element.webkitRequestFullscreen();
+                    } else if (element.mozRequestFullScreen) {
+                        element.mozRequestFullScreen();
+                    } else if (element.msRequestFullscreen) {
+                        element.msRequestFullscreen();
+                    }
+                    icon.classList.replace('fa-expand', 'fa-compress');
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                    icon.classList.replace('fa-compress', 'fa-expand');
+                }
+            }
+            
+            document.addEventListener('fullscreenchange', updateButton);
+            document.addEventListener('webkitfullscreenchange', updateButton);
+            document.addEventListener('mozfullscreenchange', updateButton);
+            document.addEventListener('MSFullscreenChange', updateButton);
+            
+            function updateButton() {
+                if (document.fullscreenElement || document.webkitFullscreenElement || 
+                    document.mozFullScreenElement || document.msFullscreenElement) {
+                    icon.classList.replace('fa-expand', 'fa-compress');
+                } else {
+                    icon.classList.replace('fa-compress', 'fa-expand');
+                }
+            }
+        });
+
+        // Modo oscuro
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.querySelector(".dark-mode-toggle");
+            toggle.addEventListener("click", () => {
+                document.body.classList.toggle("dark-mode");
+            });
+        });
+
+        // Footer animado
+        document.addEventListener("DOMContentLoaded", function() {
+            const footer = document.querySelector(".footer");
+            const trigger = document.querySelector("#footer-trigger");
+
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            footer.classList.add("visible");
+                        } else {
+                            footer.classList.remove("visible");
+                        }
+                    });
+                });
+                observer.observe(trigger);
+            } else {
+                footer.classList.add("visible");
+            }
+        });
+
+        // Mostrar íconos en el menú móvil
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.navbar a');
+            navLinks.forEach(link => {
+                const iconClass = link.getAttribute('data-icon');
+                if (iconClass) {
+                    link.innerHTML = `<i class="${iconClass}"></i>`;
+                }
+            });
+        });
+
+        // Mostrar/Ocultar navbar al scroll
+        let lastScroll = 0;
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll) {
+                navbar.style.transform = 'translateY(100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+        });
+
+        // Manejo del formulario de delivery
+        document.addEventListener('DOMContentLoaded', () => {
+            const submitButton = document.getElementById('submitBtn');
+            const getLocationButton = document.querySelector('.get-location');
+            const direccionExacta = document.getElementById('direccion');
+            const preCarga = document.querySelector('.pre-carga');
+
+            let userLat = null;
+            let userLng = null;
+
+            // Obtener ubicación
+            getLocationButton.addEventListener('click', () => {
+                if (navigator.geolocation) {
+                    getLocationButton.innerHTML = '<span class="loading"></span> Detectando ubicación...';
+                    getLocationButton.disabled = true;
+
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            userLat = position.coords.latitude;
+                            userLng = position.coords.longitude;
+                            direccionExacta.value = `Latitud: ${userLat.toFixed(6)}, Longitud: ${userLng.toFixed(6)}`;
+                            getLocationButton.innerHTML = '<i class="fas fa-location-arrow icon"></i><span>Obtener información de ubicación</span>';
+                            getLocationButton.disabled = false;
+                        },
+                        (error) => {
+                            let message = '';
+                            switch (error.code) {
+                                case error.PERMISSION_DENIED:
+                                    message = 'Permiso denegado. Por favor, habilita la geolocalización.';
+                                    break;
+                                case error.POSITION_UNAVAILABLE:
+                                    message = 'No se pudo obtener tu ubicación. Intenta nuevamente.';
+                                    break;
+                                case error.TIMEOUT:
+                                    message = 'Tiempo de espera agotado. Intenta nuevamente.';
+                                    break;
+                                case error.UNKNOWN_ERROR:
+                                    message = 'Ocurrió un error desconocido. Intenta nuevamente.';
+                                    break;
+                            }
+                            alert(message);
+                            getLocationButton.innerHTML = '<i class="fas fa-location-arrow icon"></i><span>Obtener información de ubicación</span>';
+                            getLocationButton.disabled = false;
+                        },
+                        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+                    );
+                } else {
+                    alert('Tu navegador no soporta geolocalización.');
+                }
+            });
+
+            // Enviar a WhatsApp
+            submitButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                
+                // Validar campos requeridos
+                let isValid = true;
+                const requiredFields = document.querySelectorAll('[required]');
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.classList.add('error');
+                    } else {
+                        field.classList.remove('error');
+                    }
+                });
+
+                if (!isValid) {
+                    alert('Por favor complete todos los campos requeridos.');
+                    return;
+                }
+
+                // Obtener valores del formulario
+                const nombre = document.getElementById('nombre').value;
+                const telefono = document.getElementById('telefono').value;
+                const direccion = document.getElementById('direccion').value;
+                const referencia = document.getElementById('referencia').value || 'No especificado';
+                const zona = document.getElementById('zona').value;
+                const productos = document.getElementById('productos').value;
+                const fecha = document.getElementById('fecha').value;
+                const hora = document.getElementById('hora').value;
+                const metodoPago = document.getElementById('metodoPago').value;
+                const instrucciones = document.getElementById('instrucciones').value || 'No especificado';
+                const archivos = document.getElementById('archivo').files.length;
+
+                const whatsappNumber = "51939275406";
+                const libreriaDireccion = "Las Gemas 126, Urb. Santa Inés, Trujillo";
+
+                // Construir mensaje para WhatsApp
+                let mensaje = `✨ *Hola Studio & Progetto!* ✨\n\n` +
+                    `📦 *Solicitud de Delivery*\n` +
+                    `Quisiera solicitar un delivery a mi ubicación, por favor:\n\n` +
+                    `👤 *Nombre:* ${nombre}\n` +
+                    `📞 *Teléfono:* ${telefono}\n` +
+                    `📍 *Dirección Exacta:* ${direccion}\n` +
+                    (userLat && userLng ? `🌍 *Ubicación GPS:* https://www.google.com/maps?q=${userLat},${userLng}\n` : '') +
+                    `📍 *Referencia:* ${referencia}\n` +
+                    `🏙️ *Zona:* ${zona}\n` +
+                    `📦 *Productos a Entregar:* ${productos}\n` +
+                    `📅 *Fecha de Entrega:* ${fecha}\n` +
+                    `⏰ *Hora Aproximada:* ${hora}\n` +
+                    `💳 *Método de Pago:* ${metodoPago}\n` +
+                    `📝 *Instrucciones Adicionales:* ${instrucciones}\n\n` +
+                    `🏠 *Dirección de la Librería:* ${libreriaDireccion}\n\n` +
+                    `🛵 *Información de Envío:*\n` +
+                    `Por favor, indíqueme:\n` +
+                    `- Costo aproximado del envío\n` +
+                    `- Tiempo estimado de entrega\n` +
+                    `- Formas de pago aceptadas\n\n` +
+                    `¡Muchas gracias! 😊\n` +
+                    `_Espero su respuesta pronto_`;
+
+                if (archivos > 0) {
+                    mensaje += `\n📎 *Archivos adjuntos:* ${archivos} archivo(s) subido(s)`;
+                }
+
+                // Codificar el mensaje para URL
+                const mensajeCodificado = encodeURIComponent(mensaje);
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${mensajeCodificado}`;
+
+                // Cambiar estado del botón
+                submitButton.innerHTML = '<span class="loading"></span> Redirigiendo...';
+                submitButton.disabled = true;
+
+                // Redirigir inmediatamente a WhatsApp
+                window.location.href = whatsappUrl;
+
+                // Restaurar botón después de 3 segundos (por si no se redirige)
+                setTimeout(() => {
+                    submitButton.innerHTML = 'Enviar solicitud';
+                    submitButton.disabled = false;
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>

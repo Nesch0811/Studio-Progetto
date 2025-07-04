@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo de Productos | Útiles con Filtros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="IMG_Extra/logosinfondo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="productos.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="productos.js" defer></script>
+  <script src="delivery.js" defer></script>
+  <script src="scripts.js" defer></script>
+</head>
+
+<body class="light-mode">
+  <!-- Preloader -->
+  <div class="pre-carga">
+    <div class="pre-carga-contenido">
+      <img src="IMG_Extra/logosinfondo.png" alt="Logo Studio & Progetto" class="logo">
+      <div class="loader"></div>
+      <p class="nombre-pagina">Studio & Progetto</p>
+    </div>
+  </div>
+  <!-- Header principal -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="IMG_Extra/logosinfondo.png" alt="Studio & Progetto Logo">
+        <span>Studio & Progetto</span>
+      </a>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html" class="active" data-icon="fas fa-home">Inicio</a></li>
+          <li><a href="productos.html" data-icon="fas fa-box">Productos</a></li>
+          <li><a href="copias-impresion.html" data-icon="fas fa-print">Copias e Impresiones</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <a href="carrito.html" class="nav-icon" aria-label="Carrito"><i class="fas fa-shopping-cart"></i></a>
+        <a href="iniciar-sesion.html" class="nav-icon" aria-label="Iniciar sesión"><i class="fas fa-user"></i></a>
+        <button class="dark-mode-toggle" aria-label="Alternar modo oscuro"><i class="fas fa-moon"></i></button>
+      </div>
+      <button class="mobile-menu" aria-label="Abrir menú de navegación"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+  <div id="app">
+    <nav id="sidebar" aria-label="Filtros de categorías de productos">
+      <div class="search-container mb-6">
+        <label for="search" class="visually-hidden">Buscar productos</label>
+        <input type="search" id="search" placeholder="Buscar productos..." aria-label="Buscar productos"
+          autocomplete="off" class="w-full" />
+      </div>
+      <button id="toggle-cart"
+        class="text-white px-4 py-2 rounded mb-6 flex items-center hover:brightness-110 transition-colors"
+        style="background-color: #2E7D32;">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        Carrito (<span id="cart-count">0</span>)
+      </button>
+
+      <!-- Sidebar del carrito -->
+      <div id="cart-sidebar"
+        class="cart-sidebar fixed right-0 top-0 h-full w-80 bg-white shadow-lg p-6 z-50 transform translate-x-full transition-transform duration-300"
+        aria-hidden="true">
+        <h2 class="text-2xl font-bold mb-4">Carrito de Compras</h2>
+
+        <!-- Botón para cerrar -->
+        <button id="close-cart" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Contenedor de ítems -->
+        <div id="cart-items" class="space-y-4"></div>
+        <p id="empty-cart-text" class="text-gray-500 text-sm mt-2">El carrito está vacío.</p>
+
+        <!-- Total y botón de checkout -->
+        <div class="mt-6 border-t pt-4">
+          <p class="text-lg font-semibold"><span id="cart-total">Total: S/ 0.00</span></p>
+          <button id="checkout" class="w-full text-white py-2 rounded mt-4 hover:brightness-110 transition-colors"
+            style="background-color: #2E7D32;">
+            Finalizar Compra
+          </button>
+        </div>
+      </div>
+      <h2 class="text-xl font-bold mb-4" style="color: #2E7D32;">Filtros</h2>
+      <ul class="filters" role="list">
+        <!-- Útiles Escolares -->
+        <li class="category mb-4">
+          <label>
+            <input type="checkbox" class="filter-checkbox" data-group="school" id="utiles-escolares" checked />
+            Útiles Escolares
+          </label>
+          <ul class="subcategory-list mt-2" aria-label="Utiles Escolares">
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Cuadernos y Libretas"
+                  data-parent="school" checked /> Cuadernos y Libretas</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Lápices y Lapiceros"
+                  data-parent="school" checked /> Lápices y Lapiceros</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Borradores y Tajadores"
+                  data-parent="school" checked /> Borradores y Tajadores</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Reglas y Escuadras"
+                  data-parent="school" checked /> Reglas y Escuadras</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Plumones y Marcadores"
+                  data-parent="school" checked /> Plumones y Marcadores</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Colores y Crayones"
+                  data-parent="school" checked /> Colores y Crayones</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Pegamentos y Adhesivos"
+                  data-parent="school" checked /> Pegamentos y Adhesivos</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Papel bond, cartulina, papel lustre"
+                  data-parent="school" checked /> Papel bond, cartulina, papel lustre</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Mochilas y Loncheras"
+                  data-parent="school" checked /> Mochilas y Loncheras</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Plastilina y Masilla"
+                  data-parent="school" checked /> Plastilina y Masilla</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Tijeras escolares"
+                  data-parent="school" checked /> Tijeras escolares</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Pizarras y marcadores para pizarra"
+                  data-parent="school" checked /> Pizarras y marcadores para pizarra</label></li>
+          </ul>
+        </li>
+        <!-- Útiles Universitarios -->
+        <li class="category mb-4">
+          <label>
+            <input type="checkbox" class="filter-checkbox" data-group="university" id="utiles-universitarios" checked />
+            Útiles Universitarios
+          </label>
+          <ul class="subcategory-list mt-2" aria-label="Utiles Universitarios">
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Calculadoras científicas"
+                  data-parent="university" checked /> Calculadoras científicas</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Portaminas y minas"
+                  data-parent="university" checked /> Portaminas y minas</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Resaltadores y subrayadores"
+                  data-parent="university" checked /> Resaltadores y subrayadores</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Post-it y notas adhesivas"
+                  data-parent="university" checked /> Post-it y notas adhesivas</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Correctores" data-parent="university"
+                  checked /> Correctores</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Folders y archivadores"
+                  data-parent="university" checked /> Folders y archivadores</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Perforadoras y engrapadoras"
+                  data-parent="university" checked /> Perforadoras y engrapadoras</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Regla T, compás, transportador"
+                  data-parent="university" checked /> Regla T, compás, transportador</label></li>
+          </ul>
+        </li>
+        <!-- Útiles de Oficina -->
+        <li class="category mb-4">
+          <label>
+            <input type="checkbox" class="filter-checkbox" data-group="office" id="utiles-oficina" checked />
+            Útiles de Oficina
+          </label>
+          <ul class="subcategory-list mt-2" aria-label="Utiles de Oficina">
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Papel bond (A4, oficio, carta)"
+                  data-parent="office" checked /> Papel bond (A4, oficio, carta)</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Clips, sujetadores y chinches"
+                  data-parent="office" checked /> Clips, sujetadores y chinches</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Engrapadoras y grapas"
+                  data-parent="office" checked /> Engrapadoras y grapas</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Cinta adhesiva y dispensadores"
+                  data-parent="office" checked /> Cinta adhesiva y dispensadores</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Carpetas manila y folders colgantes"
+                  data-parent="office" checked /> Carpetas manila y folders colgantes</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="plumones para oficina"
+                  data-parent="office" checked /> plumones para oficina</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Calculadoras" data-parent="office"
+                  checked /> Calculadoras</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Calculadoras" data-parent="office"
+                  checked /> Sellos y tampones</label></li>
+          </ul>
+        </li>
+        <!-- Arte y Manualidades -->
+        <li class="category">
+          <label>
+            <input type="checkbox" class="filter-checkbox" data-group="art" id="arte-manualidades" checked />
+            Arte y Manualidades
+          </label>
+          <ul class="subcategory-list mt-2" aria-label="Arte y Manualidades">
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Pinceles y pinturas acrílicas"
+                  data-parent="art" checked /> Pinceles y pinturas acrílicas</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Acuarelas y témperas"
+                  data-parent="art" checked /> Acuarelas y témperas</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Lienzos y bastidores"
+                  data-parent="art" checked /> Lienzos y bastidores</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Cartulinas y papeles decorativos"
+                  data-parent="art" checked /> Cartulinas y papeles decorativos</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Silicona líquida o en barra"
+                  data-parent="art" checked /> Silicona líquida o en barra</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox"
+                  data-filter="Lápices de dibujo, carboncillo, pasteles" data-parent="art" checked /> Lápices de dibujo,
+                carboncillo, pasteles</label></li>
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Cutter y base de corte"
+                  data-parent="art" checked /> Cutter y base de corte</label></li>
+          </ul>
+        </li>
+        <!-- Varios (sin subcategorías por ahora, pero preparado) -->
+        <li class="category">
+          <label>
+            <input type="checkbox" class="filter-checkbox" data-group="varios" id="varios" checked />
+            Varios
+          </label>
+          <ul class="subcategory-list mt-2 hidden">
+            <li><label><input type="checkbox" class="filter-checkbox" data-filter="Otros" data-parent="varios"
+                  checked /> Otros</label></li>
+          </ul>
+        </li>
+
+    </nav>
+
+    <main id="content" class="p-8" tabindex="-1">
+      <header class="mb-8">
+        <h1 class="text-4xl font-bold text-gray-900">Catálogo de Productos</h1>
+      </header>
+      <section id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        aria-live="polite">
+        <!-- Product cards appended here -->
+      </section>
+      <p id="no-results" class="hidden text-center text-lg text-gray-500 mt-8">No se encontraron productos.</p>
+    </main>
+    <div id="product-modal" class="modal hidden">
+      <div class="bg-white p-8 rounded-lg max-w-2xl w-full relative">
+        <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Botón de delivery -->
+  <a id="deliveryFloat" href="delivery.html" class="delivery-float" title="Delivery">
+    <i class="fas fa-motorcycle"></i>
+    <span class="delivery-notification"></span>
+  </a>
+
+  <!-- Contenedor de la moto -->
+  <div class="moto-container" id="motoContainer">
+    <div class="moto">🏍️</div>
+  </div>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/51939275406" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <p><i class="fas fa-phone"></i> +51 939275406</p>
+        <p><i class="fas fa-envelope"></i> studioprogettosac@gmail.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Sobre nosotros</h3>
+        <ul>
+          <li><a href="politicas-privacidad.html">Políticas de Privacidad</a></li>
+          <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Horarios</h3>
+        <p>Lunes a Sábado</p>
+        <p>8am - 9pm</p>
+      </div>
+      <div class="footer-section">
+        <h3>Enlaces rápidos</h3>
+        <ul>
+          <li><a href="productos.html">Ofertas Especiales</a></li>
+          <li><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Síguenos</h3>
+        <ul class="wrapper">
+          <li class="icon facebook"><span class="tooltip">Facebook</span><i class="fab fa-facebook-f"></i></li>
+          <li class="icon instagram"><span class="tooltip">Instagram</span><i class="fab fa-instagram"></i></li>
+          <li class="icon tiktok"><span class="tooltip">TikTok</span><i class="fab fa-tiktok"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 Studio & Progetto. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <script>
+    // checkbox-sync.js
+    document.addEventListener("DOMContentLoaded", () => {
+      const mainCheckboxes = document.querySelectorAll('input.filter-checkbox[data-group]');
+
+      mainCheckboxes.forEach(main => {
+        main.addEventListener('change', () => {
+          const group = main.dataset.group;
+          const children = document.querySelectorAll(`input.filter-checkbox[data-parent="${group}"]`);
+          children.forEach(child => {
+            child.checked = main.checked;
+          });
+        });
+      });
+      // Opcional: desmarcar principal si todos los hijos están desmarcados
+      const childCheckboxes = document.querySelectorAll('input.filter-checkbox[data-parent]');
+      childCheckboxes.forEach(child => {
+        child.addEventListener('change', () => {
+          const group = child.dataset.parent;
+          const siblings = document.querySelectorAll(`input.filter-checkbox[data-parent="${group}"]`);
+          const mainCheckbox = document.querySelector(`input.filter-checkbox[data-group="${group}"]`);
+
+          const allUnchecked = Array.from(siblings).every(cb => !cb.checked);
+          if (mainCheckbox) {
+            mainCheckbox.checked = !allUnchecked;
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

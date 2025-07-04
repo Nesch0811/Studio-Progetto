@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio & Progetto - Iniciar Sesión</title>
+    <link rel="stylesheet" href="iniciar-sesion.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link href="logosinfondo.png" rel="icon" type="image/x-icon" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="main.js"></script>
+    <script src="dark-mode.js"></script>
+    <script src="fullscreen.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="g_id_onload" data-client_id="645759930804-s7pusnj5o7m3haj8pm21noaccvolh1o6.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse">
+    </div>
+
+    <div class="g_id_signin" data-type="standard" data-theme="outline" data-size="large">
+    </div>
+    <div class="pre-carga">
+        <div class="pre-carga-contenido">
+            <img src="IMG_Extra/logosinfondo.png" alt="Logo" class="logo" align="center">
+            <div class="loader"></div>
+            <p class="nombre-pagina"> Studio & Progetto </p>
+        </div>
+    </div>
+    <script>
+        function mostrarContenido() {
+            document.querySelector('.pre-carga').classList.add('desaparecer');
+            setTimeout(() => {
+                document.querySelector('.pre-carga').style.display = 'none';
+            }, 500); // Esperar la transición (0.5 segundos)
+        }
+
+        setTimeout(mostrarContenido, 2000); // Mostrar contenido después de 2 segundos
+        window.addEventListener('load', mostrarContenido);
+    </script>
+
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="IMG_Extra/logosinfondo.png" alt="Studio & Progetto Logo">
+                <span>Studio & Progetto</span>
+            </a>
+            <nav class="navbar" style="background: #84ca6f !important;">
+                <ul>
+                    <li><a href="index.html" class="active" data-icon="fas fa-home">Inicio</a></li>
+                    <li><a href="productos.html" data-icon="fas fa-box">Productos</a></li>
+                    <li><a href="copias-impresion.html" data-icon="fas fa-print">Copias e Impresiones</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="carrito.html" class="nav-icon" aria-label="Carrito"><i class="fas fa-shopping-cart"></i></a>
+                <a href="iniciar-sesion.html" class="nav-icon" aria-label="Iniciar sesión"><i class="fas fa-user"></i></a>
+                <button class="dark-mode-toggle" aria-label="Alternar modo oscuro"><i class="fas fa-moon"></i></button>
+            </div>
+            <button class="mobile-menu" aria-label="Menú móvil"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="contact-content-wrapper">
+
+                <div class="contact-form-column" style="padding: 40px 32px; min-width: 370px; box-sizing: border-box;">
+                    <div class="auth-container">
+                        <div class="auth-tabs"
+                            style="display: flex; justify-content: center; gap: 12px; margin-bottom: 24px;">
+                            <button class="tab-btn active" data-tab="login">Iniciar Sesión</button>
+                            <button class="tab-btn" data-tab="register">Registrarse</button>
+                        </div>
+
+                        <!-- Contenido de formularios -->
+                        <div class="auth-content">
+                            <!-- Formulario Login -->
+                            <div class="auth-form active" id="login">
+                                <h2>Bienvenido de vuelta</h2>
+                                <p>Inicia sesión para acceder a tu cuenta y disfrutar de beneficios exclusivos.</p>
+
+                                <form id="loginForm">
+                                    <div class="form-group">
+                                        <label>Correo electrónico:</label>
+                                        <input type="email" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Contraseña:</label>
+                                        <input type="password" required>
+                                        <div
+                                            style="display: flex; flex-direction: column; align-items: center; margin-top: 16px;">
+                                            <a href="#" class="forgot-password" style="margin-bottom: 16px;">¿Olvidaste
+                                                tu contraseña?</a>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex; justify-content: center;">
+                                        <button type="submit" class="btn">Iniciar Sesión</button>
+                                    </div>
+
+                                    <div class="social-login"
+                                        style="display: flex; flex-direction: column; align-items: center;">
+                                        <p>O inicia sesión con:</p>
+                                        <div class="social-buttons" style="display: flex; gap: 10px;">
+                                            <div id="g_id_onload" data-client_id="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"
+                                                data-callback="handleCredentialResponse"></div>
+                                            <div class="g_id_signin" data-type="standard" data-theme="outline"
+                                                data-size="large"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- Formulario Registro -->
+                            <div class="auth-form" id="register">
+                                <h2>Crear una cuenta</h2>
+                                <p>Regístrate para acceder a ofertas exclusivas y hacer seguimiento de tus pedidos.</p>
+
+                                <form id="registerForm">
+                                    <div class="form-group">
+                                        <label>Nombre completo:</label>
+                                        <input type="text" name="user_name" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Correo electrónico:</label>
+                                        <input type="email" name="user_email" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Teléfono:</label>
+                                        <input type="tel" name="user_phone" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Contraseña:</label>
+                                        <input type="password" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Confirmar contraseña:</label>
+                                        <input type="password" required>
+                                    </div>
+
+                                    <div class="form-group checkbox-group" style="margin-top: 10px;">
+                                        <label for="termsCheckbox"
+                                            style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                                            <input type="checkbox" id="termsCheckbox" required>
+                                            <span>
+                                                Acepto los <a href="terminos-condiciones.html">Términos y
+                                                    Condiciones</a> y las
+                                                <a href="politicas-privacidad.html">Políticas de Privacidad</a>
+                                            </span>
+                                        </label>
+                                    </div>
+
+                                    <div style="display: flex; justify-content: center;">
+                                        <button type="submit" class="btn">Registrarse</button>
+                                    </div>
+
+                                    <div class="social-login"
+                                        style="display: flex; flex-direction: column; align-items: center;">
+                                        <p>O regístrate con:</p>
+                                        <div class="social-buttons" style="display: flex; gap: 10px;">
+                                            <div id="g_id_onload" data-client_id="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"
+                                                data-callback="handleCredentialResponse"></div>
+                                            <div class="g_id_signin" data-type="standard" data-theme="outline"
+                                                data-size="large"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- /auth-content -->
+                    </div> <!-- /auth-container -->
+                </div> <!-- /contact-form-column -->
+
+                
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/51939275406" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <button class="fullscreen-btn" title="Pantalla completa">
+        <i class="fas fa-expand"></i>
+    </button>
+
+    <div id="footer-trigger"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fullscreenBtn = document.querySelector('.fullscreen-btn');
+            const icon = fullscreenBtn.querySelector('i');
+
+            // Verificar si el navegador soporta la API de Fullscreen
+            if (!document.fullscreenEnabled && !document.webkitFullscreenEnabled &&
+                !document.mozFullScreenEnabled && !document.msFullscreenEnabled) {
+                fullscreenBtn.style.display = 'none';
+                return;
+            }
+
+            fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+            function toggleFullscreen() {
+                if (!document.fullscreenElement &&    // Standard
+                    !document.webkitFullscreenElement && // WebKit
+                    !document.mozFullScreenElement &&    // Firefox
+                    !document.msFullscreenElement) {     // IE/Edge
+                    // Entrar en pantalla completa
+                    const element = document.documentElement;
+
+                    if (element.requestFullscreen) {
+                        element.requestFullscreen();
+                    } else if (element.webkitRequestFullscreen) {
+                        element.webkitRequestFullscreen();
+                    } else if (element.mozRequestFullScreen) {
+                        element.mozRequestFullScreen();
+                    } else if (element.msRequestFullscreen) {
+                        element.msRequestFullscreen();
+                    }
+
+                    icon.classList.replace('fa-expand', 'fa-compress');
+                } else {
+                    // Salir de pantalla completa
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+
+                    icon.classList.replace('fa-compress', 'fa-expand');
+                }
+            }
+
+            // Escuchar cambios en el estado de pantalla completa
+            document.addEventListener('fullscreenchange', updateButton);
+            document.addEventListener('webkitfullscreenchange', updateButton);
+            document.addEventListener('mozfullscreenchange', updateButton);
+            document.addEventListener('MSFullscreenChange', updateButton);
+
+            function updateButton() {
+                if (document.fullscreenElement || document.webkitFullscreenElement ||
+                    document.mozFullScreenElement || document.msFullscreenElement) {
+                    icon.classList.replace('fa-expand', 'fa-compress');
+                } else {
+                    icon.classList.replace('fa-compress', 'fa-expand');
+                }
+            }
+        });
+    </script>
+
+    <div id="footer-trigger"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-phone"></i> +51 939275406</p>
+                <p><i class="fas fa-envelope"></i> studioprogettosac@gmail.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Sobre nosotros</h3>
+                <ul>
+                    <li><a href="politicas-privacidad.html">Políticas de Privacidad</a></li>
+                    <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Sábado</p>
+                <p>8am - 9pm</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="productos.html">Ofertas Especiales</a></li>
+                    <li><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Studio & Progetto. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const footer = document.querySelector(".footer");
+            const trigger = document.querySelector("#footer-trigger");
+
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            footer.classList.add("visible");
+                        } else {
+                            footer.classList.remove("visible");
+                        }
+                    });
+                });
+
+                observer.observe(trigger);
+            } else {
+                // Fallback para navegadores antiguos
+                footer.classList.add("visible");
+            }
+        });
+    </script>
+
+
+    <script>
+        // Slider automático (Note: Your HTML doesn't seem to have elements for a hero slider,
+        // so this JS might not be fully functional on this specific page if the elements aren't present.)
+        let slides = document.querySelectorAll(".slide");
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            if (slides.length > 0) { // Add a check to prevent errors if no slides are found
+                slides[index].classList.add("active");
+            }
+        }
+
+        function nextSlide() {
+            if (slides.length > 0) {
+                currentIndex = (currentIndex + 1) % slides.length;
+                showSlide(currentIndex);
+            }
+        }
+
+        function prevSlide() {
+            if (slides.length > 0) {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                showSlide(currentIndex);
+            }
+        }
+
+        // Only add event listeners if the elements exist
+        const nextBtn = document.querySelector(".next");
+        const prevBtn = document.querySelector(".prev");
+        if (nextBtn) nextBtn.addEventListener("click", nextSlide);
+        if (prevBtn) prevBtn.addEventListener("click", prevSlide);
+
+        // Only set interval if there are slides
+        if (slides.length > 1) {
+            setInterval(nextSlide, 5000); // Cambia de slide cada 5 segundos
+        }
+
+        // Modo oscuro
+        const toggle = document.querySelector(".dark-mode-toggle");
+        if (toggle) { // Check if toggle exists
+            toggle.addEventListener("click", () => {
+                document.body.classList.toggle("dark-mode");
+            });
+        }
+
+
+        // Pantalla completa
+        const fullscreenBtn = document.querySelector(".fullscreen-btn");
+        if (fullscreenBtn) { // Check if button exists
+            fullscreenBtn.addEventListener("click", () => {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    }
+                }
+            });
+        }
+    </script>
+
+    <script>
+        function handleCredentialResponse(response) {
+            const token = response.credential;
+            const data = parseJwt(token);
+            console.log("Usuario:", data);
+
+            // Mostrar el nombre o foto del usuario
+            document.body.innerHTML += `
+      <p>Bienvenido, ${data.name}</p>
+      <img src="${data.picture}" width="100" />
+    `;
+        }
+
+        function parseJwt(token) {
+            const base64Url = token.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            const jsonPayload = decodeURIComponent(atob(base64).split('').map(c =>
+                '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
+            ).join(''));
+            return JSON.parse(jsonPayload);
+        }
+    </script>
+
+
+</body>
+
+<script>
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navList = document.querySelector('.navbar ul');
+
+    if (mobileMenu && navList) { // Check if elements exist
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    }
+
+    // JS for tab switching in auth forms
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const authForms = document.querySelectorAll('.auth-form');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.dataset.tab;
+
+                // Remove active class from all buttons and forms
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                authForms.forEach(form => form.classList.remove('active'));
+
+                // Add active class to clicked button and corresponding form
+                button.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+    });
+</script>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+    // Inicializa EmailJS con tu public key
+    (function () {
+        emailjs.init("ljrrwh4JSstPyRfJm"); // ← reemplaza esto
+    })();
+
+    // Evento de envío del formulario
+    document.getElementById('registerForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Evita recarga
+
+        emailjs.sendForm('service_55h53x9', 'template_m26gxge', this)
+            .then(function () {
+                alert('📬 Registro enviado con éxito. Revisa tu correo.');
+                document.getElementById("registerForm").reset();
+            }, function (error) {
+                alert('❌ Error al enviar el correo: ' + JSON.stringify(error));
+            });
+    });
+</script>
+
+</html>

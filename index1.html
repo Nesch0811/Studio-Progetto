@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto - Studio & Progetto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-section {
+            padding: 60px 0;
+        }
+
+        .contact-title {
+            text-align: center;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .form-and-image {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .form-3d-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-3d {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group.floating input,
+        .form-group.floating textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .form-group.floating input:focus,
+        .form-group.floating textarea:focus {
+            outline: none;
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group.floating label {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            background: transparent;
+        }
+
+        .form-group.floating input:focus + label,
+        .form-group.floating textarea:focus + label,
+        .form-group.floating input:not(:placeholder-shown) + label,
+        .form-group.floating textarea:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 15px;
+            font-size: 12px;
+            color: white;
+            background: rgba(102, 126, 234, 0.8);
+            padding: 2px 8px;
+            border-radius: 5px;
+        }
+
+        .form-group.floating textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .highlight {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+
+        .form-group.floating input:focus ~ .highlight,
+        .form-group.floating textarea:focus ~ .highlight {
+            width: 100%;
+        }
+
+        .error-message {
+            color: #ff6b6b;
+            font-size: 12px;
+            margin-top: 5px;
+            display: block;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .error-message.show {
+            opacity: 1;
+        }
+
+        .btn-3d {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-3d:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .btn-3d:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-3d:hover::before {
+            left: 100%;
+        }
+
+        .form-image {
+            text-align: center;
+        }
+
+        .form-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .form-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .success-message {
+            background: rgba(76, 175, 80, 0.9);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .error-general {
+            background: rgba(244, 67, 54, 0.9);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .form-and-image {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .contact-title {
+                font-size: 2rem;
+            }
+            
+            .form-3d-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Contact Form -->
+        <section class="contact-section">
+            <div class="container">
+                <h2 class="contact-title">Contáctanos</h2>
+                <div class="form-and-image">
+                    <div class="form-3d-container">
+                        <div class="success-message" id="successMessage">
+                            ¡Mensaje enviado exitosamente! Te contactaremos pronto.
+                        </div>
+                        <div class="error-general" id="errorMessage">
+                            Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
+                        </div>
+                        <form id="contactForm" class="form-3d" action="https://formspree.io/f/mnnvvdnz" method="POST">
+                            <div class="form-group floating">
+                                <input type="text" name="name" id="name" required aria-describedby="name-desc" placeholder=" ">
+                                <label for="name">Nombre completo</label>
+                                <div class="highlight"></div>
+                                <span id="name-desc" class="sr-only">Ingrese su nombre completo</span>
+                                <span class="error-message" id="name-error"></span>
+                            </div>
+                            <div class="form-group floating">
+                                <input type="email" name="email" id="email" required aria-describedby="email-desc" placeholder=" ">
+                                <label for="email">Correo electrónico</label>
+                                <div class="highlight"></div>
+                                <span id="email-desc" class="sr-only">Ingrese su correo electrónico</span>
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+                            <div class="form-group floating">
+                                <input type="tel" name="phone" id="phone" required aria-describedby="phone-desc" placeholder=" ">
+                                <label for="phone">Número de teléfono</label>
+                                <div class="highlight"></div>
+                                <span id="phone-desc" class="sr-only">Ingrese su número de teléfono</span>
+                                <span class="error-message" id="phone-error"></span>
+                            </div>
+                            <div class="form-group floating">
+                                <textarea name="message" id="message" required aria-describedby="message-desc" placeholder=" "></textarea>
+                                <label for="message">Descripción de tu consulta</label>
+                                <div class="highlight"></div>
+                                <span id="message-desc" class="sr-only">Describa su consulta</span>
+                                <span class="error-message" id="message-error"></span>
+                            </div>
+                            <button type="submit" class="btn-3d" aria-label="Enviar mensaje">
+                                <span class="btn-text">Enviar mensaje</span>
+                                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="form-image">
+                        <img src="IMG_Extra/logoinicio.webp" alt="Logo 3D Studio & Progetto">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Limpiar mensajes anteriores
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'none';
+            
+            // Validación básica
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            let isValid = true;
+            
+            // Validar nombre
+            if (name.length < 2) {
+                showError('name-error', 'El nombre debe tener al menos 2 caracteres');
+                isValid = false;
+            } else {
+                hideError('name-error');
+            }
+            
+            // Validar email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showError('email-error', 'Por favor ingresa un email válido');
+                isValid = false;
+            } else {
+                hideError('email-error');
+            }
+            
+            // Validar teléfono
+            const phoneRegex = /^[+]?[\d\s\-\(\)]{8,}$/;
+            if (!phoneRegex.test(phone)) {
+                showError('phone-error', 'Por favor ingresa un teléfono válido');
+                isValid = false;
+            } else {
+                hideError('phone-error');
+            }
+            
+            // Validar mensaje
+            if (message.length < 10) {
+                showError('message-error', 'El mensaje debe tener al menos 10 caracteres');
+                isValid = false;
+            } else {
+                hideError('message-error');
+            }
+            
+            if (!isValid) {
+                return;
+            }
+            
+            // Deshabilitar botón mientras se envía
+            const submitBtn = document.querySelector('.btn-3d');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="btn-text">Enviando...</span><span class="btn-icon"><i class="fas fa-spinner fa-spin"></i></span>';
+            submitBtn.disabled = true;
+            
+            // Enviar formulario usando Formspree
+            const formData = new FormData(this);
+            
+            fetch('https://formspree.io/f/mnnvvdnz', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('successMessage').style.display = 'block';
+                    document.getElementById('contactForm').reset();
+                } else {
+                    return response.json().then(data => {
+                        if (Object.hasOwnProperty.call(data, 'errors')) {
+                            document.getElementById('errorMessage').textContent = data.errors.map(error => error.message).join(', ');
+                        } else {
+                            document.getElementById('errorMessage').textContent = 'Hubo un problema al enviar el formulario.';
+                        }
+                        document.getElementById('errorMessage').style.display = 'block';
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('errorMessage').style.display = 'block';
+            })
+            .finally(() => {
+                // Restaurar botón
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+        
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.classList.add('show');
+        }
+        
+        function hideError(elementId) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.classList.remove('show');
+        }
+    </script>
+</body>
+</html>

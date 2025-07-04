@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio & Progetto - Copias e Impresión</title>
+    <link rel="stylesheet" href="copias-impresion.css">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="main.js"></script>
+    <script src="dark-mode.js"></script>
+    <script src="fullscreen.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+
+<body>
+    <div class="pre-carga">
+        <div class="pre-carga-contenido">
+            <img src="IMG_Extra/logosinfondo.png" alt="Logo" class="logo" align="center">
+            <div class="loader"></div>
+            <p class="nombre-pagina"> Studio & <br>Progetto </p>
+        </div>
+    </div>
+    <script>
+        function mostrarContenido() {
+            document.querySelector('.pre-carga').classList.add('desaparecer');
+            setTimeout(() => {
+                document.querySelector('.pre-carga').style.display = 'none';
+            }, 500); // Esperar la transición (0.5 segundos)
+        }
+
+        setTimeout(mostrarContenido, 2000); // Mostrar contenido después de 2 segundos
+        window.addEventListener('load', mostrarContenido);
+    </script>
+    <!-- Barra de navegación -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="IMG_Extra/logosinfondo.png" alt="Studio & Progetto Logo">
+                <span>Studio & <br> Progetto</span>
+            </a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html" class="active" data-icon="fas fa-home">Inicio</a></li>
+                    <li><a href="productos.html" data-icon="fas fa-box">Productos</a></li>
+                    <li><a href="copias-impresion.html" data-icon="fas fa-print">Copias e Impresiones</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="carrito.html" class="nav-icon" aria-label="Carrito"><i class="fas fa-shopping-cart"></i></a>
+                <a href="iniciar-sesion.html" class="nav-icon" aria-label="Iniciar sesión"><i
+                        class="fas fa-user"></i></a>
+                <button class="dark-mode-toggle" aria-label="Alternar modo oscuro"><i class="fas fa-moon"></i></button>
+            </div>
+            <button class="mobile-menu" aria-label="Menú móvil"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+
+
+
+    <!-- Servicios de copias e impresión -->
+    <section class="printing-services">
+
+        <div class="container">
+            <h1>Servicios de Copias e Impresión</h1>
+            <p class="service-description">Ofrecemos servicios de alta calidad para todas tus necesidades de impresión,
+                copiado y escaneo. Trabajamos con diversos formatos y tipos de papel.</p>
+
+            <div class="service-options">
+
+                <div class="service-card" id="printOption">
+                    <i class="fas fa-print"></i>
+                    <h3>Impresión</h3>
+                    <p>Imprime tus documentos con la mejor calidad</p>
+                </div>
+
+                <div class="service-card" id="copyOption">
+                    <i class="fas fa-copy"></i>
+                    <h3>Copias</h3>
+                    <p>Copias rápidas y económicas</p>
+                </div>
+
+                <div class="service-card" id="scanOption">
+                    <i class="fas fa-file-upload"></i>
+                    <h3>Escaneo</h3>
+                    <p>Digitaliza tus documentos</p>
+                </div>
+
+            </div>
+
+
+            <!-- Formulario de impresión -->
+            <div class="printing-form" id="printingForm">
+
+                <h2><i class="fas fa-print"></i> Solicitud de Impresión</h2>
+
+                <div class="form-step active" id="step1">
+                    <h3>1. Sube tus archivos</h3>
+                    <div class="file-upload">
+                        <input type="file" id="fileInput" multiple
+                            accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.ppt,.pptx,.xls,.xlsx">
+                        <label for="fileInput" class="upload-btn">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Seleccionar archivos</span>
+                        </label>
+                        <div class="file-list" id="fileList">
+                            <p>No hay archivos seleccionados</p>
+                        </div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button class="btn next-step" data-next="step2">Siguiente</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step2">
+                    <h3>2. Configuración de impresión</h3>
+
+                    <div class="form-group">
+                        <label>Tipo de papel:</label>
+                        <select>
+                            <option>Bond 75g (Estándar)</option>
+                            <option>Bond 90g (Premium)</option>
+                            <option>Couche mate 150g</option>
+                            <option>Couche brillante 150g</option>
+                            <option>Autoadhesivo</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Color:</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="color" value="bw" checked>
+                                <span>Blanco y negro</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="color" value="color">
+                                <span>Color</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tamaño:</label>
+                        <select>
+                            <option>A4 (21cm x 29.7cm)</option>
+                            <option>A3 (29.7cm x 42cm)</option>
+                            <option>Carta (21.6cm x 27.9cm)</option>
+                            <option>Oficio (21.6cm x 33cm)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Orientación:</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="orientation" value="portrait" checked>
+                                <span>Vertical</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="orientation" value="landscape">
+                                <span>Horizontal</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cantidad por archivo:</label>
+                        <input type="number" min="1" value="1">
+                    </div>
+
+                    <div class="form-navigation">
+                        <button class="btn prev-step" data-prev="step1">Anterior</button>
+                        <button class="btn next-step" data-next="step3">Siguiente</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step3">
+                    <h3>3. Información de contacto</h3>
+
+                    <div class="form-group">
+                        <label>Nombre completo:</label>
+                        <input type="text" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Teléfono:</label>
+                        <input type="tel" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Correo electrónico:</label>
+                        <input type="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Instrucciones adicionales:</label>
+                        <textarea rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Método de entrega:</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="delivery" value="pickup" checked>
+                                <span>Recojo en tienda</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="delivery" value="delivery">
+                                <span>Delivery (costo adicional)</span>
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-navigation">
+                        <button class="btn prev-step" data-prev="step2">Anterior</button>
+
+
+                        <div class="submit-options">
+                            <button class="btn whatsapp-submit" id="whatsappSubmitBtn">
+                                <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                            </button>
+                            <button class="btn email-submit" id="emailSubmitBtn">
+                                <i class="fas fa-envelope"></i> Enviar por Correo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Mensaje para copias y escaneo -->
+            <div class="service-message" id="serviceMessage">
+                <h2>Para servicios de copias o escaneo</h2>
+                <p>Visita nuestro local con los documentos que deseas copiar o escanear. Nuestro personal te atenderá de
+                    inmediato.</p>
+
+                <div class="pricing-table">
+                    <h3>Precios de copias:</h3>
+                    <p class="price-notice">Los precios son una referencia general, para más información comunícate con
+                        nosotros o visita nuestro local</p>
+                    <table>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Blanco y negro</th>
+                            <th>Color</th>
+                        </tr>
+                        <tr>
+                            <td>A4</td>
+                            <td>S/0.10</td>
+                            <td>S/0.50</td>
+                        </tr>
+                        <tr>
+                            <td>A3</td>
+                            <td>S/0.50</td>
+                            <td>S/1.00</td>
+                        </tr>
+                    </table>
+
+                    <h3>Precios de escaneo:</h3>
+                    <p class="price-notice">Los precios son una referencia general, para más información comunícate con
+                        nosotros o visita nuestro local.</p>
+
+                    <table>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Precio por hoja</th>
+                        </tr>
+                        <tr>
+                            <td>A4</td>
+                            <td>S/0.50</td>
+                        </tr>
+                        <tr>
+                            <td>A3</td>
+                            <td>S/1.00</td>
+                        </tr>
+                    </table>
+                </div>
+
+
+                <div class="location-info">
+                    <h3>Visítanos en:</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Las Gemas 626, Urb. Santa Inés, Trujillo-Perú</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn">Ver en Google Maps</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/51939275406" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Botón de pantalla completa -->
+    <button class="fullscreen-btn" title="Pantalla completa">
+        <i class="fas fa-expand"></i>
+    </button>
+
+    <div id="footer-trigger"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fullscreenBtn = document.querySelector('.fullscreen-btn');
+            const icon = fullscreenBtn.querySelector('i');
+
+            // Verificar si el navegador soporta la API de Fullscreen
+            if (!document.fullscreenEnabled && !document.webkitFullscreenEnabled &&
+                !document.mozFullScreenEnabled && !document.msFullscreenEnabled) {
+                fullscreenBtn.style.display = 'none';
+                return;
+            }
+
+            fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+            function toggleFullscreen() {
+                if (!document.fullscreenElement &&    // Standard
+                    !document.webkitFullscreenElement && // WebKit
+                    !document.mozFullScreenElement &&    // Firefox
+                    !document.msFullscreenElement) {    // IE/Edge
+                    // Entrar en pantalla completa
+                    const element = document.documentElement;
+
+                    if (element.requestFullscreen) {
+                        element.requestFullscreen();
+                    } else if (element.webkitRequestFullscreen) {
+                        element.webkitRequestFullscreen();
+                    } else if (element.mozRequestFullScreen) {
+                        element.mozRequestFullScreen();
+                    } else if (element.msRequestFullscreen) {
+                        element.msRequestFullscreen();
+                    }
+
+                    icon.classList.replace('fa-expand', 'fa-compress');
+                } else {
+                    // Salir de pantalla completa
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+
+                    icon.classList.replace('fa-compress', 'fa-expand');
+                }
+            }
+
+
+            // Escuchar cambios en el estado de pantalla completa
+            document.addEventListener('fullscreenchange', updateButton);
+            document.addEventListener('webkitfullscreenchange', updateButton);
+            document.addEventListener('mozfullscreenchange', updateButton);
+            document.addEventListener('MSFullscreenChange', updateButton);
+
+            function updateButton() {
+                if (document.fullscreenElement || document.webkitFullscreenElement ||
+                    document.mozFullScreenElement || document.msFullscreenElement) {
+                    icon.classList.replace('fa-expand', 'fa-compress');
+                } else {
+                    icon.classList.replace('fa-compress', 'fa-expand');
+                }
+            }
+        });
+    </script>
+
+    <div id="footer-trigger"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-phone"></i> +51 939275406</p>
+                <p><i class="fas fa-envelope"></i> studioprogettosac@gmail.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Sobre nosotros</h3>
+                <ul>
+                    <li><a href="politicas-privacidad.html">Políticas de Privacidad</a></li>
+                    <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Sábado</p>
+                <p>8am - 9pm</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="productos.html">Ofertas Especiales</a></li>
+                    <li><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <ul class="wrapper">
+                    <li>
+                        <a class="icon facebook" href="https://www.facebook.com/profile.php?id=61576368759571"
+                            target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon instagram"
+                            href="https://www.instagram.com/studioprogettosac/?utm_source=ig_web_button_share_sheet"
+                            target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="icon tiktok" href="https://www.tiktok.com/@tu_usuario" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Studio & Progetto. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const footer = document.querySelector(".footer");
+            const trigger = document.querySelector("#footer-trigger");
+
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            footer.classList.add("visible");
+                        } else {
+                            footer.classList.remove("visible");
+                        }
+                    });
+                });
+
+                observer.observe(trigger);
+            } else {
+                // Fallback para navegadores antiguos
+                footer.classList.add("visible");
+            }
+        });
+    </script>
+
+
+    <script>
+        // Slider automático
+        let slides = document.querySelectorAll(".slide");
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            slides[index].classList.add("active");
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        document.querySelector(".next").addEventListener("click", nextSlide);
+        document.querySelector(".prev").addEventListener("click", prevSlide);
+
+        setInterval(nextSlide, 5000); // Cambia de slide cada 5 segundos
+
+        // Modo oscuro
+        const toggle = document.querySelector(".dark-mode-toggle");
+        toggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+
+        // Pantalla completa
+        const fullscreenBtn = document.querySelector(".fullscreen-btn");
+        fullscreenBtn.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+<script>
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navList = document.querySelector('.navbar ul');
+
+    mobileMenu.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+</script>
+
+
+</html>

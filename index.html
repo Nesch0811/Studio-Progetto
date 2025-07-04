@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio & Progetto - Inicio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+  <script src="delivery.js"></script>
+  <link rel="icon" href="IMG_Extra/logosinfondo.png" type="image/x-icon">
+  <script src="scripts.js"></script>
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="pre-carga">
+    <div class="pre-carga-contenido">
+      <img src="IMG_Extra/logosinfondo.png" alt="Logo Studio & Progetto" class="logo">
+      <div class="loader"></div>
+      <p class="nombre-pagina">Studio & Progetto</p>
+    </div>
+  </div>
+
+  <!-- Welcome Dialog -->
+  <dialog id="dialogo">
+    <h2>¡Bienvenido a Studio & Progetto!</h2>
+    <p>Estamos aquí para ofrecerte los mejores productos y servicios de impresión y copias.</p>
+    <button id="cerrarDialogo" class="button" aria-label="Cerrar diálogo">Cerrar</button>
+  </dialog>
+
+
+
+  <!-- Form Feedback Dialog -->
+  <dialog id="formFeedbackDialog">
+    <div class="feedback-dialog-content">
+      <button id="closeFeedbackDialog" aria-label="Cerrar diálogo de retroalimentación">Cerrar</button>
+      <div class="feedback-content"></div>
+    </div>
+  </dialog>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="IMG_Extra/logosinfondo.png" alt="Studio & Progetto Logo">
+        <span>Studio & Progetto</span>
+      </a>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html" class="active" data-icon="fas fa-home">Inicio</a></li>
+          <li><a href="productos.html" data-icon="fas fa-box">Productos</a></li>
+          <li><a href="copias-impresion.html" data-icon="fas fa-print">Copias e Impresiones</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <a href="carrito.html" class="nav-icon" aria-label="Carrito"><i class="fas fa-shopping-cart"></i></a>
+        <a href="iniciar-sesion.html" class="nav-icon" aria-label="Iniciar sesión"><i class="fas fa-user"></i></a>
+        <button class="dark-mode-toggle" aria-label="Alternar modo oscuro"><i class="fas fa-moon"></i></button>
+      </div>
+      <button class="mobile-menu" aria-label="Menú móvil"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Slider -->
+    <section class="hero">
+
+      <div class="hero-slider">
+
+        <!-- Slide 1 -->
+
+        <div class="slide active">
+
+          <img src="IMG_Extra/Inicio.webp" alt="Studio & Progetto">
+
+          <div class="slide-content">
+
+            <h1 class="anímate_animated anímate_fadeInDown">
+
+              Todo en útiles escolares, universitarios y de oficina
+
+            </h1>
+
+            <div class="anímate_animated anímate_fadeInUp">
+
+              <p><strong>BIENVENIDO A STUDIO & PROGETTO</strong></p>
+
+              <p><strong>¡Explora nuestros artículos!</strong></p>
+
+              <a href="productos.html" class="btn">Ver productos</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Slide 2 -->
+
+        <div class="slide">
+
+          <img src="IMG_Extra/utilesEscolares.webp" alt="Copias e impresión">
+
+          <div class="slide-content">
+
+            <h1>Servicios de copias e impresión</h1>
+
+            <p>Rápidos, económicos y de alta calidad</p>
+
+            <a href="copias-impresion.html" class="btn">Más información</a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Slide 3 -->
+
+        <div class="slide">
+
+          <img src="IMG_Extra/Inicio.webp" alt="Delivery">
+
+          <div class="slide-content">
+
+            <h1>Servicio de delivery</h1>
+
+            <p>Recibe tus productos donde sea que te encuentres y cuando los necesites</p>
+
+            <a href="delivery.html" class="btn">Conoce más</a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Controles del slider -->
+
+        <div class="slider-controls">
+
+          <button class="prev" aria-label="Slide anterior">
+
+            <i class="fas fa-chevron-left"></i>
+
+          </button>
+
+          <button class="next" aria-label="Slide siguiente">
+
+            <i class="fas fa-chevron-right"></i>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+    <!-- Services -->
+    <section class="page-section" id="services">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">¿Qué ofrecemos?</h2>
+          <h2 class="section-subheading text-muted">Conoce lo que brindamos al consumidor.</h2>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-4">
+            <a href="productos.html" style="text-decoration: none;">
+              <span class="fa-stack fa-4x" style="position: relative; display: inline-block; cursor: pointer;">
+                <i class="fas fa-circle fa-stack-2x text-primary"
+                  style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"></i>
+                <i class="fas fa-school fa-stack-1x fa-inverse"
+                  style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"></i>
+              </span>
+            </a>
+            <h4 class="my-3">Útiles escolares</h4>
+            <p class="text-muted">Ofrecemos una gran variedad de útiles como lapiceros, colores, plumones, clips,
+              papelería y más.</p>
+          </div>
+          <div class="col-md-4">
+            <a href="productos.html" style="text-decoration: none;">
+              <span class="fa-stack fa-4x" style="position: relative; display: inline-block;">
+                <i class="fas fa-circle fa-stack-2x text-primary"
+                  style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"></i>
+                <i class="fas fa-graduation-cap fa-stack-1x fa-inverse"
+                  style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"></i>
+              </span>
+            </a>
+            <h4 class="my-3">Útiles universitarios</h4>
+            <p class="text-muted">Entra y aprovecha los artículos especiales que tenemos para cada una de las carreras.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <a href="copias-impresion.html" style="text-decoration: none;">
+              <span class="fa-stack fa-4x" style="position: relative; display: inline-block;">
+                <i class="fas fa-circle fa-stack-2x text-primary"
+                  style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"></i>
+                <i class="fas fa-print fa-stack-1x fa-inverse"
+                  style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"></i>
+              </span>
+            </a>
+            <h4 class="my-3">Servicios de copiado e impresión</h4>
+            <p class="text-muted">Impresiones y copias de alta calidad, rápidas y económicas para tus necesidades.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+      <div class="container">
+        <h2>Productos más vendidos</h2>
+        <div class="product-grid" aria-label="Productos destacados">
+          <div class="product-card" tabindex="0" aria-label="Cuadernos universitarios">
+            <div class="product-card-front">
+              <img src="IMG_Extra/cuadernosuniversitarios.webp" alt="Cuadernos universitarios" class="product-image">
+              <div class="product-info">
+                <h3>Cuadernos universitarios</h3>
+                <p>S/12.00</p>
+                <a href="productos.html" class="btn">Ver más</a>
+              </div>
+            </div>
+            <div class="product-card-back">
+              <h3>Cuadernos universitarios</h3>
+              <p>Cuadernos de alta calidad con hojas lisas y rayadas, ideal para apuntes y proyectos universitarios.
+                Disponible en varios colores.</p>
+            </div>
+          </div>
+          <div class="product-card" tabindex="0" aria-label="Pack de lapiceros">
+            <div class="product-card-front">
+              <img src="IMG_Extra/lapiceros.webp" alt="Pack de lapiceros" class="product-image">
+              <div class="product-info">
+                <h3>Pack de lapiceros</h3>
+                <p>S/8.50</p>
+                <a href="productos.html" class="btn">Ver más</a>
+              </div>
+            </div>
+            <div class="product-card-back">
+              <h3>Pack de lapiceros</h3>
+              <p>Set de 12 lapiceros de tinta suave y secado rápido, ergonómicos para largas sesiones de escritura.</p>
+            </div>
+          </div>
+          <div class="product-card" tabindex="0" aria-label="Carpetas A4">
+            <div class="product-card-front">
+              <img src="IMG_Extra/carpetas.webp" alt="Carpetas A4" class="product-image">
+              <div class="product-info">
+                <h3>Carpetas A4</h3>
+                <p>S/15.00</p>
+                <a href="productos.html" class="btn">Ver más</a>
+              </div>
+            </div>
+            <div class="product-card-back">
+              <h3>Carpetas A4</h3>
+              <p>Carpetas organizadoras con separadores y bolsillos internos, perfectas para documentos importantes y
+                trabajos universitarios.</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <a href="productos.html" class="btn btn-large">Ver todos los productos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Suppliers -->
+    <section class="suppliers">
+      <div class="container">
+        <h2>Nuestros Proveedores</h2>
+        <div class="suppliers-carousel">
+          <div class="suppliers-track">
+            <div class="supplier-item"><img src="IMG_Marcas/fabercastel.webp" alt="Faber-Castell"></div>
+            <div class="supplier-item"><img src="IMG_Marcas/artesco.webp" alt="Artesco"></div>
+            <div class="supplier-item"><img src="IMG_Marcas/vinifan.webp" alt="Vinifan"></div>
+            <div class="supplier-item"><img src="IMG_Marcas/layconsa.webp" alt="Layconsa"></div>
+            <div class="supplier-item"><img src="IMG_Marcas/ove.webp" alt="OVE"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Duplicate the track content for seamless infinite scroll
+        const track = document.querySelector('.suppliers-track');
+        track.innerHTML += track.innerHTML;
+      });
+    </script>
+
+    <!-- Location -->
+    <section class="location-map-section">
+      <div class="container">
+        <h2  class="section-title animate__animated animate__fadeIn">Visítanos</h2>
+        <div class="map-container">
+          <div class="map-frame">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.1234567890123!2d-79.01234567890123!3d-8.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3f1234567890%3A0x123456789abcdef!2sCalle%20Las%20Gemas%20626%2C%20Urb.%20Santa%20In%C3%A9s%2C%20Trujillo%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1680000000000!5m2!1ses!2spe"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="google-map"
+              title="Ubicación de Studio & Progetto"></iframe>
+          </div>
+          <div class="map-info">
+            <p><i class="fas fa-map-marker-alt"></i> Calle Las Gemas 626, Urb. Santa Inés, Trujillo, Perú</p>
+            <p><i class="fas fa-phone"></i> +51 939275406</p>
+            <p><i class="fas fa-clock"></i> Lunes a Sábado, 8am - 9pm</p>
+            <a href="https://maps.google.com" target="_blank" class="btn map-btn" aria-label="Cómo llegar">
+              <i class="fas fa-directions"></i> Cómo llegar
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <iframe src="index1.html"></iframe>
+
+    <!-- Botón de delivery -->
+    <a id="deliveryFloat" href="delivery.html" class="delivery-float" title="Delivery">
+      <i class="fas fa-motorcycle"></i>
+      <span class="delivery-notification"></span>
+    </a>
+
+    <!-- Contenedor de la moto -->
+    <div class="moto-container" id="motoContainer">
+      <div class="moto">🏍️</div>
+    </div>
+
+    <!-- WhatsApp flotante -->
+    <a href="https://wa.me/51939275406" class="whatsapp-float" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Botón de pantalla completa -->
+    <button class="fullscreen-btn" title="Pantalla completa">
+      <i class="fas fa-expand"></i>
+    </button>
+
+    <div id="footer-trigger"></div>
+
+    <!-- Footer Trigger -->
+    <div id="footer-trigger"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <p><i class="fas fa-phone"></i> +51 939275406</p>
+          <p><i class="fas fa-envelope"></i> studioprogettosac@gmail.com</p>
+        </div>
+        <div class="footer-section">
+          <h3>Sobre nosotros</h3>
+          <ul>
+            <li><a href="politicas-privacidad.html">Políticas de Privacidad</a></li>
+            <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Horarios</h3>
+          <p>Lunes a Sábado</p>
+          <p>8am - 9pm</p>
+        </div>
+        <div class="footer-section">
+          <h3>Enlaces rápidos</h3>
+          <ul>
+            <li><a href="productos.html">Ofertas Especiales</a></li>
+            <li><a href="iniciar-sesion.html">Iniciar Sesión</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <ul class="wrapper">
+            <li>
+              <a class="icon facebook" href="https://www.facebook.com/profile.php?id=61576368759571" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a class="icon instagram"
+                href="https://www.instagram.com/studioprogettosac/?utm_source=ig_web_button_share_sheet"
+                target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a class="icon tiktok" href="https://www.tiktok.com/@tu_usuario" target="_blank">
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2025 Studio & Progetto. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <!-- Scripts combinados -->
+    <script>
+      // Animación de la moto y redirección
+      const deliveryLink = document.getElementById('deliveryFloat');
+      const motoContainer = document.getElementById('motoContainer');
+
+      deliveryLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        motoContainer.classList.remove('active');
+        void motoContainer.offsetWidth;
+        motoContainer.classList.add('active');
+        setTimeout(() => {
+          window.location.href = deliveryLink.getAttribute('href');
+        }, 10000);
+      });
+
+      // Pantalla completa
+      document.addEventListener('DOMContentLoaded', function () {
+        const fullscreenBtn = document.querySelector('.fullscreen-btn');
+        const icon = fullscreenBtn.querySelector('i');
+
+        if (!document.fullscreenEnabled && !document.webkitFullscreenEnabled &&
+          !document.mozFullScreenEnabled && !document.msFullscreenEnabled) {
+          fullscreenBtn.style.display = 'none';
+          return;
+        }
+
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+        function toggleFullscreen() {
+          if (!document.fullscreenElement && !document.webkitFullscreenElement &&
+            !document.mozFullScreenElement && !document.msFullscreenElement) {
+            const element = document.documentElement;
+            if (element.requestFullscreen) {
+              element.requestFullscreen();
+            } else if (element.webkitRequestFullscreen) {
+              element.webkitRequestFullscreen();
+            } else if (element.mozRequestFullScreen) {
+              element.mozRequestFullScreen();
+            } else if (element.msRequestFullscreen) {
+              element.msRequestFullscreen();
+            }
+            icon.classList.replace('fa-expand', 'fa-compress');
+          } else {
+            if (document.exitFullscreen) {
+              document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+              document.mozCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+              document.msExitFullscreen();
+            }
+            icon.classList.replace('fa-compress', 'fa-expand');
+          }
+        }
+
+        document.addEventListener('fullscreenchange', updateButton);
+        document.addEventListener('webkitfullscreenchange', updateButton);
+        document.addEventListener('mozfullscreenchange', updateButton);
+        document.addEventListener('MSFullscreenChange', updateButton);
+
+        function updateButton() {
+          if (document.fullscreenElement || document.webkitFullscreenElement ||
+            document.mozFullScreenElement || document.msFullscreenElement) {
+            icon.classList.replace('fa-expand', 'fa-compress');
+          } else {
+            icon.classList.replace('fa-compress', 'fa-expand');
+          }
+        }
+      });
+    </script>
+
+</body>
+
+</html>
